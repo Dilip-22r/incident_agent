@@ -23,7 +23,7 @@ pool = ConnectionPool(
 )
 
 rag_embeddings = GoogleGenerativeAIEmbeddings(
-    model="gemini-embedding-2-preview",
+    model="gemini-embedding-2",
     google_api_key=os.getenv("GEMINI_API_KEY"),
     task_type="RETRIEVAL_QUERY",
     output_dimensionality=768,
@@ -96,7 +96,7 @@ class AgentState(TypedDict):
 
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+    model="gemini-3.5-flash-lite",
     google_api_key=os.getenv("GEMINI_API_KEY"),
 ).bind_tools(all_tools)
 
